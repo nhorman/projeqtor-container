@@ -8,6 +8,7 @@ RUN docker-php-ext-install zip
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
 RUN docker-php-ext-install imap
 ADD php.ini /usr/local/etc/php/php.ini
+ADD php.ini /etc/php/php.ini
 RUN cd /var/www/html && curl -o projeqtor.zip https://psychz.dl.sourceforge.net/project/projectorria/projeqtorV11.2.3.zip?viasf=1
 RUN cd /var/www/html && unzip projeqtor.zip && mv projeqtor/* . && rm -f *.zip
 RUN chown -R www-data:www-data /var/www/html
