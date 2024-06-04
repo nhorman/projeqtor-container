@@ -16,6 +16,8 @@ services:
     container_name: projeqtor
     ports:
       - 8888:80
+    volumes:
+      - /var/www/html
     links:
       - mysql_projeqtor
 
